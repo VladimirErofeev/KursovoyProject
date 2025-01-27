@@ -16,6 +16,13 @@ namespace KursovoyProject
             random = new Random(); // Инициализация Random
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StartGameForm startForm = new StartGameForm();
+            startForm.Show();
+            this.Hide(); // Скрыть основную форму
+        }
+
         private void btnStartGame_Click(object sender, EventArgs e)
         {
             // Сбросить очки и ставку
@@ -127,6 +134,43 @@ namespace KursovoyProject
         private void lblScore_Click(object sender, EventArgs e)
         {
             // Этот метод можно оставить пустым или удалить, если он не нужен
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // Закрыть приложение
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+        private void btnMouseEnter(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = System.Drawing.Color.LightBlue; // Изменение цвета фона при наведении
+        }
+
+        private void btnMouseLeave(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = System.Drawing.Color.FromName("Control"); // Возврат к исходному цвету
+        }
+
+        private void btnMouseDown(object sender, MouseEventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = System.Drawing.Color.Blue; // Изменение цвета фона при нажатии
+        }
+
+        private void btnMouseUp(object sender, MouseEventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.BackColor = System.Drawing.Color.LightBlue; // Возврат к цвету при наведении
         }
     }
 }
